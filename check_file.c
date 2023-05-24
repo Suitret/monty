@@ -17,48 +17,51 @@ void error_message(char *mes)
 }
 
 /**
+ * error_inside - prints the suitable error message
+ * @opc: incorrect opcode
+ * @index: error line
+ * Return: void
+ */
+
+void error_inside(int index, char *opc)
+{
+	char *str, *num;
+
+	str = malloc(256);
+	num = malloc(10);
+	if (!str || !num)
+		error_message("Error: malloc failed");
+
+	tostring(num, index);
+	str = strcpy(str, "L");
+	str = strcat(str, num);
+	str = strcat(str, ": unknown instruction ");
+	str = strcat(str, opc);
+
+	fprintf(stderr, "%s\n", str);
+	free(num), free(str);
+	exit(EXIT_FAILURE);
+}
+
+/**
  * check_file - checks if a file can be used
  * @filename: name of the file
  * Return: 0 or 1
  */
 
-int check_file(char *fil)
+int check_file(char *filename)
 {
-	int index = 1;
-	FILE *file;
-	char line[1024], *temp, *str, *num;
-	str = malloc(1024);
+	char *str;
 
+	if (access(filename, R_OK) == 0)
+		return (1);
+
+	str = malloc(256);
 	if (!str)
 		error_message("Error: malloc failed");
 
-	if (access(fil, R_OK) == 0)
-	{
-		file = fopen(fil, "r");
-		while (fgets(line, 1024, file) != NULL)
-		{
-			temp = strtok(line, " ");
-			if (!valid_opcode(temp))
-			{
-				num = malloc(10);
-				if (!num)
-					error_message("Error: malloc failed");
-				tostring(num, index);
-				str = strcpy(str, "L");
-				str = strcat(str, num);
-				str = strcat(str, ": unknown instruction ");
-				str = strcat(str, temp);
-				error_message(str);
-				free(num), free(str);
-				return (0);
-			}
-			index++;
-		}
-		return (1);
-	}
-
 	str = strcpy(str, "Error: Can't open file ");
-	str = strcat(str, fil);
+	str = strcat(str, filename);
 	error_message(str);
 	free(str);
 	return (0);
@@ -94,18 +97,22 @@ void tostring(char str[], int num)
  * @opcode: given opcode
  * Return: 0 or 1
  */
-int valid_opcode(char *opcode)
+void *valid_opcode(char *opcode)
 {
-	char *tab[] = {"push", "pall", "pint", "pop", "swap", "add", "nop",
-					"sub", "div", "mul", "mod", "pchar", "#", "pstr",
-					"rotl", "rotr", "stack", "queue", NULL};
+	instruction_t tab[] = {
+		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
+		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+		{"div", div}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
+		{"#", pound}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
+		{"stack", stack}, {"queue", queue}, {NULL, NULL}
+	};
 	int i = 0;
 
 	while (tab[i])
 	{
 		if (strcmp(opcode, tab[i]) == 0)
-			return (1);
+			return (tab[i].f);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
