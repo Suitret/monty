@@ -9,10 +9,9 @@
  * @line_number: line number
  * Return: void
  */
-void mod(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void mod(stack_t **stack, unsigned int line_number)
 {
-
+	mod_val(stack, line_number);
 }
 /**
  * pchar - pushes an element to the stack.
