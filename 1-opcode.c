@@ -40,10 +40,9 @@ void pint(stack_t **stack, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void pop(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
-
+	pop_top_node(stack, line_number);
 }
 /**
  * swap - pushes an element to the stack.
