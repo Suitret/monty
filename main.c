@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 		file = fopen(argv[1], "r");
 		while (fgets(line, 256, file) != NULL)
 		{
+			line[strcspn(line, "\n")] = '\0';
 			opcode = strtok(line, " ");
 			myfunc = valid_opcode(opcode);
 			if (!myfunc)
