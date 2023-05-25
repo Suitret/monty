@@ -84,3 +84,22 @@ void div_val(stack_t **head, unsigned int index)
 	else
 		error_with_line(": can't div, stack too short", index);
 }
+/**
+ * mul_val - adds a new node at the beginning of a stack_t list
+ * @head:  pointer to the head of list
+ * @index: number
+ * Return: the head of list
+ */
+void mul_val(stack_t **head, unsigned int index)
+{
+	int temp;
+
+	if (*head && ((*head)->next))
+	{
+		temp = ((*head)->n) * ((*head)->next->n);
+		(*head)->next->n = temp;
+		pop_top_node(head, index);
+	}
+	else
+		error_with_line(": can't mul, stack too short", index);
+}

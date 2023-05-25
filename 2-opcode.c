@@ -50,8 +50,7 @@ void divi(stack_t **stack, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void mul(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void mul(stack_t **stack, unsigned int line_number)
 {
-
+	mul_val(stack, line_number);
 }
