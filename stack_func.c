@@ -9,7 +9,7 @@
  * Return: the head of list
  */
 
-stack_t *add_dnodeint(stack_t **head, const int n)
+stack_t *add_node(stack_t **head, const int n)
 {
 	stack_t *node;
 
@@ -29,12 +29,12 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 }
 
 /**
- * free_dlistint - frees a dlistint_t list.
+ * free_list - frees a stack_t list.
  * @head: given list
  * Return: void
  */
 
-void free_dlistint(stack_t *head)
+void free_list(stack_t *head)
 {
 	stack_t *temp;
 
@@ -46,3 +46,20 @@ void free_dlistint(stack_t *head)
 	}
 }
 
+/**
+ * print_list - frees a dlistint_t list.
+ * @head: given list
+ * Return: void
+ */
+size_t print_list(stack_t *h)
+{
+	int len = 0;
+
+	while (h)
+	{
+		printf("%d\n", h->n);
+		len++;
+		h = h->next;
+	}
+	return (len);
+}

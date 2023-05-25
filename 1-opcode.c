@@ -9,10 +9,9 @@
  * @line_number: line number
  * Return: void
  */
-void push(__attribute__((unused))stack_t **stack, 
-		__attribute__((unused))unsigned int line_number)
+void push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-
+	add_dnodeint(stack, value);
 }
 /**
  * pall - pushes an element to the stack.
@@ -20,10 +19,10 @@ void push(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pall(__attribute__((unused))stack_t **stack, 
+void pall(stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
-
+	print_list(*stack);
 }
 /**
  * pint - pushes an element to the stack.

@@ -39,8 +39,8 @@ void error_inside(int index, char *str);
 int check_file(char *filename);
 void tostring(char str[], int num);
 func valid_opcode(char *opcode);
-void free_dlistint(stack_t *head);
-stack_t *add_dnodeint(stack_t **head, const int n);
+void free_list(stack_t *head);
+stack_t *add_node(stack_t **head, const int n);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
