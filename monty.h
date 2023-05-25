@@ -42,6 +42,7 @@ void error_inside(int index, char *str);
 int check_file(char *filename);
 void tostring(char str[], int num);
 func valid_opcode(char *opcode);
+int push_arg(char *str, int index);
 
 /* Functions to manage the stack */
 

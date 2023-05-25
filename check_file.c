@@ -4,15 +4,12 @@
 #include <unistd.h>
 #include "monty.h"
 
-/*void (*func)(stack_t **, unsigned int);*/
-
 /**
  * error_message - prints the suitable error message
  * @mes: message to print
  * @arg: second argument
  * Return: void
  */
-
 void error_message(char *mes, char *arg)
 {
 	if (arg)
@@ -28,7 +25,6 @@ void error_message(char *mes, char *arg)
  * @index: error line
  * Return: void
  */
-
 void error_inside(int index, char *opc)
 {
 	char *str, *num;

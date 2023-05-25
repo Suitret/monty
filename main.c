@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int index = 1;
 	stack_t *head = NULL;
 	FILE *file;
-	char line[256], *opcode;
+	char line[256], *opcode, *str;
 	func myfunc;
 
 	if (argc != 2)
@@ -38,9 +38,11 @@ int main(int argc, char *argv[])
 			else
 			{
 				if (strcmp(opcode, "push") == 0)
-					value = atoi(strtok(NULL, " "));
-				else
-					value = 0;
+				{
+					str = strtok(NULL, " ");
+					if (push_arg(str, index))
+						value = atoi(str);
+				}
 				myfunc(&head, index);
 			}
 			index++;
@@ -49,7 +51,6 @@ int main(int argc, char *argv[])
 	}
 	else
 		error_message("Error: Can't open file ", argv[1]);
-
 	free_list(head);
 	return (0);
 }
