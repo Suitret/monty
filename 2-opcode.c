@@ -30,10 +30,9 @@ void nop(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void sub(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void sub(stack_t **stack, unsigned int line_number)
 {
-
+	sub_val(stack, line_number);
 }
 /**
  * divi - pushes an element to the stack.
