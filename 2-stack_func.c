@@ -66,7 +66,7 @@ void sub_val(stack_t **head, unsigned int index)
  * @index: number
  * Return: the head of list
  */
-void sub_val(stack_t **head, unsigned int index)
+void div_val(stack_t **head, unsigned int index)
 {
 	int temp;
 
@@ -79,7 +79,7 @@ void sub_val(stack_t **head, unsigned int index)
 			pop_top_node(head, index);
 		}
 		else
-			error_with_line(": division by zero", index);	
+			error_with_line(": division by zero", index);
 	}
 	else
 		error_with_line(": can't div, stack too short", index);

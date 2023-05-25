@@ -33,10 +33,7 @@ int main(int argc, char *argv[])
 				continue;
 			myfunc = valid_opcode(opcode);
 			if (!myfunc)
-			{
 				error_inside(index, opcode);
-				return (0);
-			}
 			else
 			{
 				if (strcmp(opcode, "push") == 0)
