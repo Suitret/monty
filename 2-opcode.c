@@ -40,10 +40,9 @@ void sub(stack_t **stack, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void divi(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void divi(stack_t **stack, unsigned int line_number)
 {
-
+	div_val(stack, line_number);
 }
 /**
  * mul - pushes an element to the stack.
