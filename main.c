@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			index++;
 			line[strcspn(line, "\n")] = '\0';
 			opcode = strtok(line, " ");
-			if (opcode == NULL)
+			if (opcode == NULL || strcmp(opcode, "#") == 0)
 				continue;
 			myfunc = valid_opcode(opcode);
 			if (!myfunc)
