@@ -69,26 +69,30 @@ void print_list(stack_t *h)
 
 void print_top_node(stack_t *head, unsigned int index)
 {
-	char *str, *num;
-
 	if (head)
 		printf("%d\n", head->n);
 	else
-	{
-		str = malloc(256);
-		num = malloc(10);
-		if (!str || !num)
-			error_message("Error: malloc failed", NULL);
-		tostring(num, index);
-		str = strcpy(str, "L");
-		str = strcat(str, num);
-		str = strcat(str, ": can't pint, stack empty");
+		error_with_line(": can't pint, stack empty", index);
+}
+/**
+ * pop_top_node - adds a new node at the end of a listint_t list
+ * @head:  pointer to the head of list
+ * @index: number
+ * Return: void
+ */
 
-		fprintf(stderr, "%s\n", str);
-		if (str)
-			free(str);
-		if (num)
-			free(num);
-		exit(EXIT_FAILURE);
+void pop_top_node(stack_t **head, unsigned int index)
+{
+	stack_t *current;
+
+	if (*head)
+	{
+		current = *head;
+		*head = current->next;
+		if (*head != NULL)
+			(*head)->prev = NULL;
+		free(current);
 	}
+	else
+		error_with_line(": can't pop an empty stack", index);
 }
