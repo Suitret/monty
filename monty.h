@@ -45,7 +45,7 @@ func valid_opcode(char *opcode);
 int push_arg(char *str, int index);
 void error_with_line(char *str, int index);
 void add_val(stack_t **head, unsigned int index);
-void sub_val(stack_t **head, unsigned int index)
+void sub_val(stack_t **head, unsigned int index);
 
 /* Functions to manage the stack */
 

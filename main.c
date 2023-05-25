@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[])
 {
-	int index = 1;
+	int index = 0;
 	stack_t *head = NULL;
 	FILE *file;
 	char line[256], *opcode, *str;
@@ -21,14 +21,16 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 		error_message("USAGE: monty file", NULL);
-
 	if (check_file(argv[1]) && strstr(argv[1], ".m"))
 	{
 		file = fopen(argv[1], "r");
 		while (fgets(line, 256, file) != NULL)
 		{
+			index++;
 			line[strcspn(line, "\n")] = '\0';
 			opcode = strtok(line, " ");
+			if (opcode == NULL)
+				continue;
 			myfunc = valid_opcode(opcode);
 			if (!myfunc)
 			{
@@ -45,7 +47,6 @@ int main(int argc, char *argv[])
 				}
 				myfunc(&head, index);
 			}
-			index++;
 		}
 		fclose(file);
 	}
