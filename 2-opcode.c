@@ -9,10 +9,9 @@
  * @line_number: line number
  * Return: void
  */
-void add(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
-
+	add_val(stack, line_number);
 }
 /**
  * nop - pushes an element to the stack.
