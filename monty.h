@@ -52,6 +52,7 @@ stack_t *add_node(stack_t **head, const int n);
 void print_list(stack_t *h);
 void print_top_node(stack_t *h, unsigned int lnumber);
 void pop_top_node(stack_t **head, unsigned int lnumber);
+void swap_node(stack_t *head, unsigned int lnumber);
 
 /* Opcodes Functions */
 
