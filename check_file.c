@@ -107,7 +107,7 @@ void tostring(char str[], int num)
 /**
  * valid_opcode - checks if opcode is valid
  * @opcode: given opcode
- * Return: 0 or 1
+ * Return: func
  */
 func valid_opcode(char *opcode)
 {

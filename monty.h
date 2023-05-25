@@ -1,8 +1,6 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
-extern stack_t *head;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -34,6 +32,7 @@ typedef struct instruction_s
 } instruction_t;
 
 typedef void (*func)(stack_t **, unsigned int);
+extern int value;
 
 void error_message(char *mes, char *arg);
 void error_inside(int index, char *str);

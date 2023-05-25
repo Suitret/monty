@@ -13,11 +13,11 @@
 
 int main(int argc, char *argv[])
 {
-	int index = 1, value;
-	head = NULL;
+	int index = 1;
+	stack_t *head = NULL;
 	FILE *file;
 	char line[256], *opcode;
-	void (*func)(stack_t **, unsigned int);
+	func myfunc;
 
 	if (argc != 2)
 		error_message("USAGE: monty file", NULL);
@@ -28,16 +28,19 @@ int main(int argc, char *argv[])
 		while (fgets(line, 256, file) != NULL)
 		{
 			opcode = strtok(line, " ");
-			func = valid_opcode(opcode);
-			if (!func)
+			myfunc = valid_opcode(opcode);
+			if (!myfunc)
 			{
 				error_inside(index, opcode);
 				return (0);
 			}
 			else
 			{
-				exec_opcode(func, value);
-				printf("%s\n", line);
+				if (strcmp(opcode, "push") == 0)
+					value = atoi(strtok(NULL, " "));
+				else
+					value = 0;
+				myfunc(&head, index);
 			}
 			index++;
 		}
