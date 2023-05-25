@@ -4,15 +4,20 @@
 #include <unistd.h>
 #include "monty.h"
 
+/*void (*func)(stack_t **, unsigned int);*/
+
 /**
  * error_message - prints the suitable error message
  * @mes: message to print
  * Return: void
  */
 
-void error_message(char *mes)
+void error_message(char *mes, char *arg)
 {
-	fprintf(stderr, "%s\n", mes);
+	if (arg)
+		fprintf(stderr, "%s%s\n", mes, arg);
+	else
+		fprintf(stderr, "%s\n", mes);
 	exit(EXIT_FAILURE);
 }
 
@@ -30,7 +35,7 @@ void error_inside(int index, char *opc)
 	str = malloc(256);
 	num = malloc(10);
 	if (!str || !num)
-		error_message("Error: malloc failed");
+		error_message("Error: malloc failed", NULL);
 
 	tostring(num, index);
 	str = strcpy(str, "L");
@@ -39,7 +44,10 @@ void error_inside(int index, char *opc)
 	str = strcat(str, opc);
 
 	fprintf(stderr, "%s\n", str);
-	free(num), free(str);
+	if (str)
+		free(str);
+	if (num)
+		free(num);
 	exit(EXIT_FAILURE);
 }
 
@@ -58,12 +66,16 @@ int check_file(char *filename)
 
 	str = malloc(256);
 	if (!str)
-		error_message("Error: malloc failed");
+	{
+		error_message("Error: malloc failed", NULL);
+		return (0);
+	}
 
 	str = strcpy(str, "Error: Can't open file ");
 	str = strcat(str, filename);
-	error_message(str);
-	free(str);
+	error_message(str, NULL);
+	if (str)
+		free(str);
 	return (0);
 }
 
@@ -97,20 +109,20 @@ void tostring(char str[], int num)
  * @opcode: given opcode
  * Return: 0 or 1
  */
-void *valid_opcode(char *opcode)
+func valid_opcode(char *opcode)
 {
 	instruction_t tab[] = {
-		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
-		{"div", div}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
-		{"#", pound}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
-		{"stack", stack}, {"queue", queue}, {NULL, NULL}
+		{"push", &push}, {"pall", &pall}, {"pint", &pint}, {"pop", &pop},
+		{"swap", &swap}, {"add", &add}, {"nop", &nop}, {"sub", &sub},
+		{"div", &divi}, {"mul", &mul}, {"mod", &mod}, {"pchar", &pchar},
+		{"#", &pound}, {"pstr", &pstr}, {"rotl", &rotl}, {"rotr", &rotr},
+		{"stack", &stack}, {"queue", &queue}, {NULL, NULL}
 	};
 	int i = 0;
 
-	while (tab[i])
+	while (tab[i].opcode)
 	{
-		if (strcmp(opcode, tab[i]) == 0)
+		if (strcmp(opcode, tab[i].opcode) == 0)
 			return (tab[i].f);
 		i++;
 	}
