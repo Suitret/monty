@@ -35,7 +35,7 @@ void add_val(stack_t **head, unsigned int index)
 	if (*head && ((*head)->next))
 	{
 		temp = ((*head)->n) + ((*head)->next->n);
-		head->next->n = temp;
+		(*head)->next->n = temp;
 		pop_top_node(head, index);
 	}
 	else
@@ -54,7 +54,7 @@ void sub_val(stack_t **head, unsigned int index)
 	if (*head && ((*head)->next))
 	{
 		temp = ((*head)->next->n) - ((*head)->n);
-		head->next->n = temp;
+		(*head)->next->n = temp;
 		pop_top_node(head, index);
 	}
 	else
