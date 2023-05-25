@@ -11,7 +11,7 @@
  */
 void push(stack_t **stack, __attribute__((unused))unsigned int line_number)
 {
-	add_dnodeint(stack, value);
+	add_node(stack, value);
 }
 /**
  * pall - pushes an element to the stack.
@@ -19,21 +19,20 @@ void push(stack_t **stack, __attribute__((unused))unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void pall(stack_t **stack, 
+void pall(stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 	print_list(*stack);
 }
 /**
- * pint - pushes an element to the stack.
+ * pint - prints the value at the top of the stack
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void pint(__attribute__((unused))stack_t **stack, 
-		__attribute__((unused))unsigned int line_number)
+void pint(stack_t **stack, unsigned int line_number)
 {
-
+	print_top_node(*stack, line_number);
 }
 /**
  * pop - pushes an element to the stack.
@@ -41,7 +40,7 @@ void pint(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pop(__attribute__((unused))stack_t **stack, 
+void pop(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -52,7 +51,7 @@ void pop(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void swap(__attribute__((unused))stack_t **stack, 
+void swap(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 

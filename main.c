@@ -49,5 +49,6 @@ int main(int argc, char *argv[])
 	else
 		error_message("Error: Can't open file ", argv[1]);
 
+	free_list(head);
 	return (0);
 }

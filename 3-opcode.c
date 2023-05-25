@@ -9,7 +9,7 @@
  * @line_number: line number
  * Return: void
  */
-void mod(__attribute__((unused))stack_t **stack, 
+void mod(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -20,7 +20,7 @@ void mod(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pchar(__attribute__((unused))stack_t **stack, 
+void pchar(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -31,7 +31,7 @@ void pchar(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pound(__attribute__((unused))stack_t **stack, 
+void pound(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -42,7 +42,7 @@ void pound(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pstr(__attribute__((unused))stack_t **stack, 
+void pstr(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -53,7 +53,7 @@ void pstr(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void rotr(__attribute__((unused))stack_t **stack, 
+void rotr(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 

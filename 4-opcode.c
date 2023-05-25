@@ -9,7 +9,7 @@
  * @line_number: line number
  * Return: void
  */
-void rotl(__attribute__((unused))stack_t **stack, 
+void rotl(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -20,7 +20,7 @@ void rotl(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void stack(__attribute__((unused))stack_t **stack, 
+void stack(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -31,7 +31,7 @@ void stack(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void queue(__attribute__((unused))stack_t **stack, 
+void queue(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 

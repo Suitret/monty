@@ -9,7 +9,7 @@
  * @line_number: line number
  * Return: void
  */
-void add(__attribute__((unused))stack_t **stack, 
+void add(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -20,7 +20,7 @@ void add(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void nop(__attribute__((unused))stack_t **stack, 
+void nop(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -31,7 +31,7 @@ void nop(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void sub(__attribute__((unused))stack_t **stack, 
+void sub(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -42,7 +42,7 @@ void sub(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void divi(__attribute__((unused))stack_t **stack, 
+void divi(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 
@@ -53,7 +53,7 @@ void divi(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void mul(__attribute__((unused))stack_t **stack, 
+void mul(__attribute__((unused))stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
 

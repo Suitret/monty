@@ -9,6 +9,7 @@
 /**
  * error_message - prints the suitable error message
  * @mes: message to print
+ * @arg: second argument
  * Return: void
  */
 
@@ -80,7 +81,7 @@ int check_file(char *filename)
 }
 
 /**
- * to_string - converts an integer to string
+ * tostring - converts an integer to string
  * @str: string
  * @num: number
  * Return: void
