@@ -4,56 +4,56 @@
 #include "monty.h"
 
 /**
- * push - pushes an element to the stack.
+ * add - pushes an element to the stack.
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void push(__attribute__((unused))stack_t **stack, 
+void add(__attribute__((unused))stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
 
 }
 /**
- * pall - pushes an element to the stack.
+ * nop - pushes an element to the stack.
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void pall(__attribute__((unused))stack_t **stack, 
+void nop(__attribute__((unused))stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
 
 }
 /**
- * pint - pushes an element to the stack.
+ * sub - pushes an element to the stack.
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void pint(__attribute__((unused))stack_t **stack, 
+void sub(__attribute__((unused))stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
 
 }
 /**
- * pop - pushes an element to the stack.
+ * divi - pushes an element to the stack.
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void pop(__attribute__((unused))stack_t **stack, 
+void divi(__attribute__((unused))stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
 
 }
 /**
- * swap - pushes an element to the stack.
+ * mul - pushes an element to the stack.
  * @stack: stack of elements
  * @line_number: line number
  * Return: void
  */
-void swap(__attribute__((unused))stack_t **stack, 
+void mul(__attribute__((unused))stack_t **stack, 
 		__attribute__((unused))unsigned int line_number)
 {
 
