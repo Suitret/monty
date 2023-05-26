@@ -27,3 +27,22 @@ void mod_val(stack_t **head, unsigned int index)
 	else
 		error_with_line(": can't mod, stack too short", index);
 }
+/**
+ * print_char - adds a new node at the end of a listint_t list
+ * @head:  pointer to the head of list
+ * @index: number
+ * Return: void
+ */
+
+void print_char(stack_t *head, unsigned int index)
+{
+	if (head)
+	{
+		if (head->n > -1 && head->n < 128)
+			printf("%c\n", head->n);
+		else
+			error_with_line(": can't pchar, value out of range", index);
+	}
+	else
+		error_with_line(": can't pchar, stack empty", index);
+}

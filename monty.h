@@ -49,6 +49,9 @@ void sub_val(stack_t **head, unsigned int index);
 void div_val(stack_t **head, unsigned int index);
 void mul_val(stack_t **head, unsigned int index);
 void mod_val(stack_t **head, unsigned int index);
+void print_char(stack_t *head, unsigned int index);
+
+
 
 /* Functions to manage the stack */
 

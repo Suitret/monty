@@ -19,10 +19,9 @@ void mod(stack_t **stack, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
-void pchar(__attribute__((unused))stack_t **stack,
-		__attribute__((unused))unsigned int line_number)
+void pchar(stack_t **stack, unsigned int line_number)
 {
-
+	print_char(*stack, line_number);
 }
 /**
  * pound - pushes an element to the stack.
