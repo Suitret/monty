@@ -46,3 +46,22 @@ void print_char(stack_t *head, unsigned int index)
 	else
 		error_with_line(": can't pchar, stack empty", index);
 }
+/**
+ * print_string - frees a dlistint_t list.
+ * @h: given list
+ * Return: void
+ */
+void print_string(stack_t *h)
+{
+	if (!h)
+		printf("\n");
+	else
+	{
+		while (h && (h->n > 0) && (h->n < 128))
+		{
+			printf("%c", h->n);
+			h = h->next;
+		}
+		printf("\n");
+	}
+}

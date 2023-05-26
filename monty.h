@@ -50,7 +50,7 @@ void div_val(stack_t **head, unsigned int index);
 void mul_val(stack_t **head, unsigned int index);
 void mod_val(stack_t **head, unsigned int index);
 void print_char(stack_t *head, unsigned int index);
-
+void print_string(stack_t *h);
 
 
 /* Functions to manage the stack */

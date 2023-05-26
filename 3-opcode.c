@@ -40,10 +40,10 @@ void pound(__attribute__((unused))stack_t **stack,
  * @line_number: line number
  * Return: void
  */
-void pstr(__attribute__((unused))stack_t **stack,
+void pstr(stack_t **stack,
 		__attribute__((unused))unsigned int line_number)
 {
-
+	print_string(*stack);
 }
 /**
  * rotr - pushes an element to the stack.
